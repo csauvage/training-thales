@@ -14,7 +14,7 @@ export default class Film {
                 query
             },    
             headers: {
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2E3MDMzMGNmNWMyOGI1MjA2YjRhNTI5YTkyMmQwNiIsInN1YiI6IjVmN2M1YjA0MzVjMzBhMDAzNjcwNWRhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.D_KaXWE7KERtKauiFULMw9Mb6Zjl4swJ7Wb6LExW2t8',
+                    Authorization: 'Bearer ' + process.env.TOKEN,
                     'Content-Type': 'application/json;charset=utf-8'
                 }
             });

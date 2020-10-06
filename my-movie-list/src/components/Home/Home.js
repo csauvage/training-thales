@@ -1,6 +1,7 @@
 import React from "react";
 import Film from "../../models/Films";
 import FilmCard from "../FilmCard/FilmCard";
+import './Home.sass';
 
 export default class Home extends React.Component {
     
@@ -51,7 +52,7 @@ export default class Home extends React.Component {
                     onChange={this.searchFilms}
                 />
 
-                <div className="FilmList" style={{flexDirection: "row", justifyItems: "center"}}>
+                <div className="FilmList">
                     {this.state.films.map(f => <FilmCard film={f}/>)}
                 </div>
             </>
