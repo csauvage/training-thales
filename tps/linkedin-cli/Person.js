@@ -1,10 +1,10 @@
-const colors = require('colors')
+const colors = require('colors');
 
 export default class Person {
     constructor(name, city, age) {
         this.name = name;
         this.city = city;
-        this.age = city;
+        this.age = age;
         this.formation = []
         this.experience = []
     }
