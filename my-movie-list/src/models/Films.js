@@ -1,4 +1,5 @@
 import axios from "axios";
+require('dotenv').config()
 
 export default class Film {
 
@@ -14,7 +15,7 @@ export default class Film {
                 query
             },    
             headers: {
-                    Authorization: 'Bearer ' + process.env.TOKEN,
+                    Authorization: 'Bearer ' + process.env.REACT_APP_TOKEN,
                     'Content-Type': 'application/json;charset=utf-8'
                 }
             });
