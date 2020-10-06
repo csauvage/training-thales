@@ -96,18 +96,11 @@ const asyncFunction = async (msDelay) => {
     }
 })() 
 
-
-
-
-
-
-
-
-/*for(let i = 0; i < 10; i += 1) {
+for(let i = 0; i < 10; i += 1) {
     timeOut(3000)
         .then(data => console.log('Resolved with success : ' + data + ' % 2 === 0'))
         .catch(err => console.error('Promise rejected with error : ' +  err))
-}*/
+}
 
 // Rest & Spread operator 
 
@@ -174,14 +167,14 @@ const objectIterable = {
 }
 
 // Itere sur le contenu du tableau
-/*for (let present of iterableArray) {
+for (let present of iterableArray) {
     console.log(present)
-}*/
+}
 
 // Itere sur les index du tableau
-/*for (let present in iterableArray) {
+for (let present in iterableArray) {
     console.log(present)
-}*/
+}
 
 for (let element in objectIterable) {
     console.log(element)

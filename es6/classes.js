@@ -98,3 +98,5 @@ console.log(Animal.genre())
 console.log(Felin.genre())
 
 console.log(guepard.sound)
+
+---
