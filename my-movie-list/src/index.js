@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import Home from './components/Home/Home';
+import './reset.sass';
 
 ReactDOM.render(
   <React.StrictMode>

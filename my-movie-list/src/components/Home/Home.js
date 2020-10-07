@@ -23,6 +23,7 @@ export default class Home extends React.Component {
 
         if(searchValue.length > 3) {
             let response = await Film.search(searchValue);
+            console.log(response.results)
             if(response.results.length > 0) {
                 this.setState({films: response.results})
             }
@@ -31,26 +32,19 @@ export default class Home extends React.Component {
 
     }
 
-    showFilms(film) {
-        const basePath =  + film.poster_path
-
-        return (
-            <div>
-                <img style={{height: 200, borderRadius: 5}} src={basePath}/>
-                <h2>{film.title}</h2>
-            </div>
-        )
-
-    }
+    
     
     render() {
         return (
             <>
-                <input 
-                    type={'search'}
-                    value={this.state.searchValue}
-                    onChange={this.searchFilms}
-                />
+                <div className={"Search__section"}>
+                    <input 
+                        type={'search'}
+                        value={this.state.searchValue}
+                        onChange={this.searchFilms}
+                        placeholder="Rechercher un film"
+                    />
+                </div>
 
                 <div className="FilmList">
                     {this.state.films.map(f => <FilmCard film={f}/>)}
