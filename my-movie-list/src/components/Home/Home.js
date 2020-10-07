@@ -47,7 +47,7 @@ export default class Home extends React.Component {
                 </div>
 
                 <div className="FilmList">
-                    {this.state.films.map(f => <FilmCard film={f}/>)}
+                    {this.state.films.map(f => <FilmCard key={f.id} film={f}/>)}
                 </div>
             </>
         )

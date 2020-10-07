@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Person from '../../models/Person';
-import MovieList from '../MovieList/MovieList';
-import User from '../User/User';
+import UserProfile from '../User/User';
 import './Home.sass';
 
 export default class Home extends Component {
@@ -54,9 +53,7 @@ export default class Home extends Component {
 
         const {presidents, searchQuery} = this.state
 
-        return (<MovieList/>)
-
-        /*return (
+        return (
             <>
                 <div className="Home">
                     Leak'in profile 💦
@@ -65,14 +62,14 @@ export default class Home extends Component {
                         value={searchQuery}
                         placeholder={"Search"}
                         className={"Home__Input"} 
-                        type={"text"}
+                        type={"search"}
                         onChange={(event) => this.changeInput(event)}
                     />
 
-                    { presidents.map(p => <User key={p.name} isCurrent={p.name === 'Donald'} person={p}/>) }
+                    { presidents.map(p => <UserProfile key={p.name} isCurrent={p.name === 'Donald'} person={p}/>) }
                 </div>
             </>
-        )*/
+        )
 
     }
 

@@ -5,7 +5,35 @@ import {Chance} from 'chance';
 
 const chance = new Chance();
 
-export default class User extends React.Component {
+
+const UserProfile = (props) => {
+    
+    const changeAge = () => {
+        // ES6 : Object destructuring 
+        //const { person } = this.state 
+        // const person = this.state.person; 
+         
+        //person.age = chance.age({type: 'senior'}); 
+        //this.setState({ person /* : person */ });
+        console.log(chance.age({type: 'senior'}))
+
+    }
+
+    return (
+        <div className={`User ${props.isCurrent ? "User--current" : ''}`.trimEnd()}>
+            <span><img className="User__ProfilePicture" src={`https://api.adorable.io/avatars/240/${props.person.name}`} alt="Profile image"/></span>
+            <span><strong>Person :</strong> {props.person.name}</span>
+            <span><strong>City :</strong> {props.person.city} <br/></span>
+            <span><strong>Age :</strong> {props.person.age} <br/></span>
+            <button onClick={_ => changeAge()}>Random age</button>
+        </div>
+    )
+}
+
+export default UserProfile
+
+
+/*export default class User extends React.Component {
 
     constructor(props) {
         super(props)
@@ -23,7 +51,7 @@ export default class User extends React.Component {
         // const person = this.state.person; 
          
         person.age = chance.age({type: 'senior'}); 
-        this.setState({ person /* : person */ });
+        this.setState({ person });
      
         // ES6 : Object litterals 
     }
@@ -45,5 +73,5 @@ export default class User extends React.Component {
         )
     }
 
-} 
+} */
 
