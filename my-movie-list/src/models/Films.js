@@ -25,6 +25,65 @@ export default class Film {
 
     }
 
+    static async findDetails(movieId) {
+
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+            params: {
+                language: 'fr-FR',
+                api_key: process.env.REACT_APP_TMBD_KEY
+            },    
+            headers: {
+                    Authorization: 'Bearer ' + process.env.REACT_APP_TOKEN,
+                    'Content-Type': 'application/json;charset=utf-8'
+                }
+            });
+        
+        
+        return response.data;
+
+
+    }
+
+    static async findCast(movieId) {
+
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits`, {
+            params: {
+                language: 'fr-FR',
+                api_key: process.env.REACT_APP_TMBD_KEY
+            },    
+            headers: {
+                    Authorization: 'Bearer ' + process.env.REACT_APP_TOKEN,
+                    'Content-Type': 'application/json;charset=utf-8'
+                }
+            });
+        
+        
+        return response.data;
+
+
+    }
+
+
+    static async getNowPlaying(movieId) {
+
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/now_playing`, {
+            params: {
+                language: 'fr-FR',
+                api_key: process.env.REACT_APP_TMBD_KEY,
+                region: 'FR'
+            },    
+            headers: {
+                    Authorization: 'Bearer ' + process.env.REACT_APP_TOKEN,
+                    'Content-Type': 'application/json;charset=utf-8'
+                }
+            });
+        
+        
+        return response.data;
+
+
+    }
+
 
 
 }
