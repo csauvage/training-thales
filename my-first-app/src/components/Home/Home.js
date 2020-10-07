@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Person from '../../models/Person';
+import MovieList from '../MovieList/MovieList';
 import User from '../User/User';
 import './Home.sass';
 
@@ -53,21 +54,25 @@ export default class Home extends Component {
 
         const {presidents, searchQuery} = this.state
 
-        return (
-            <div className="Home">
-                Leak'in profile 💦
+        return (<MovieList/>)
 
-                <input
-                    value={searchQuery}
-                    placeholder="Search"
-                    className={"Home__Input"} 
-                    type={"text"}
-                    onChange={(event) => this.changeInput(event)}
-                />
+        /*return (
+            <>
+                <div className="Home">
+                    Leak'in profile 💦
 
-                { presidents.map(p => <User key={p.name} person={p}/>) }
-            </div>
-        )
+                    <input
+                        value={searchQuery}
+                        placeholder={"Search"}
+                        className={"Home__Input"} 
+                        type={"text"}
+                        onChange={(event) => this.changeInput(event)}
+                    />
+
+                    { presidents.map(p => <User key={p.name} isCurrent={p.name === 'Donald'} person={p}/>) }
+                </div>
+            </>
+        )*/
 
     }
 
