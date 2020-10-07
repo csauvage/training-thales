@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component, Fragment, useState} from 'react';
 import Person from '../../models/Person'
 import './User.sass'
 import {Chance} from 'chance';
@@ -6,26 +6,37 @@ import {Chance} from 'chance';
 const chance = new Chance();
 
 
-const UserProfile = (props) => {
-    
-    const changeAge = () => {
-        // ES6 : Object destructuring 
-        //const { person } = this.state 
-        // const person = this.state.person; 
-         
-        //person.age = chance.age({type: 'senior'}); 
-        //this.setState({ person /* : person */ });
-        console.log(chance.age({type: 'senior'}))
+const UserProfile = ({person, isCurrent}) => {
 
+    // Hooks
+    // Hooks d'état 
+    //const [person, setPerson] = useState(personProps);
+    const [personState, setPerson] = useState(person);
+
+    const changeAge = () => {
+        
+        
+        const age = chance.age({type: 'senior'});
+        setPerson(Object.assign(new Person(), personState, { age }))
+        
+    }
+
+    const changeCity = () => {
+        const city = chance.city();
+        setPerson(Object.assign(new Person(), personState, { city }))
     }
 
     return (
-        <div className={`User ${props.isCurrent ? "User--current" : ''}`.trimEnd()}>
-            <span><img className="User__ProfilePicture" src={`https://api.adorable.io/avatars/240/${props.person.name}`} alt="Profile image"/></span>
-            <span><strong>Person :</strong> {props.person.name}</span>
-            <span><strong>City :</strong> {props.person.city} <br/></span>
-            <span><strong>Age :</strong> {props.person.age} <br/></span>
-            <button onClick={_ => changeAge()}>Random age</button>
+        <div className={`User ${isCurrent ? "User--current" : ''}`.trimEnd()}>
+            <span><img className="User__ProfilePicture" src={`https://api.adorable.io/avatars/240/${personState.name}`} alt="Profile image"/></span>
+            <span><strong>Person :</strong> {personState.name}</span>
+            <span><strong>City :</strong> {personState.city} <br/></span>
+            <span><strong>Age :</strong> {personState.age} <br/></span>
+            <span>
+                <button onClick={_ => changeAge()}>Random age</button><br/>
+                <button onClick={_ => changeCity()}>Random city</button>
+            </span>
+            
         </div>
     )
 }
@@ -73,5 +84,6 @@ export default UserProfile
         )
     }
 
-} */
+}
 
+*/

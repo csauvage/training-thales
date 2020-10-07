@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script type="text/javascript">
+            function Header(title) {
+                const h1 = document.createElement("h1");
+                h1.innerHTML = title;
+                /* Side effect --> */document.body.appendChild(h1);
+            }
+
+            Header("This is my header - Created via Side Effect")
+
+            const Header = props => <h1>{props.title}</h1> 
+        </script>
+    </body>
+
+</html>
