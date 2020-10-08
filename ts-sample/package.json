@@ -1,0 +1,29 @@
+{
+  "name": "typescript-samples",
+  "version": "0.0.1",
+  "description": "Some exercices with TypeScript ",
+  "main": "index.js",
+  "author": "Clément SAUVAGE",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "tsc": "^1.20150623.0",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "start": "echo No start defined",
+    "start:dev": "nodemon",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.7"
+  },
+  "nodemonConfig": {
+    "ignore": [],
+    "watch": [],
+    "ext": "ts",
+    "exec": "ts-node ./src/app.ts"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "lib": ["dom", "es2019", "es2020.promise", "es2020.bigint", "es2020.string"],
+        "target": "es2019",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "strict": true,
+        "esModuleInterop": true,
+        "inlineSourceMap": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["./dist", "node_modules", "**/*.spec.ts"]
+}

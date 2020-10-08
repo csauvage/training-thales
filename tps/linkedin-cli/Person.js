@@ -1,6 +1,7 @@
 const colors = require('colors');
 
 export default class Person {
+    
     constructor(name, city, age) {
         this.name = name;
         this.city = city;
