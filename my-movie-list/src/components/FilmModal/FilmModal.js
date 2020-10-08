@@ -45,7 +45,7 @@ const FilmModal = (props) => {
                     backgroundImage: `url('https://image.tmdb.org/t/p/original${props.film.backdrop_path}')`
                 }}>
                     <span onClick={props.closeModal}>&times;</span>
-                    {film.title}
+                    <h1 style={{color: "white", fontSize: "4em"}}>{film.title}</h1>
                 </div>
             <div className={"FilmModal__Crew"}>
                 {film.cast ? film.cast.map(actor => <FilmCrew person={actor}/>) : null}

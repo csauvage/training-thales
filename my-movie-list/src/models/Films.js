@@ -64,7 +64,7 @@ export default class Film {
     }
 
 
-    static async getNowPlaying(movieId) {
+    static async getNowPlaying() {
 
         const response = await axios.get(`https://api.themoviedb.org/3/movie/now_playing`, {
             params: {
