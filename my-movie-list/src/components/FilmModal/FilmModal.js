@@ -34,15 +34,20 @@ const FilmModal = (props) => {
             setFilm(detailedFilm);
             
         }
-
         fetchMovieDetails(props.film);
 
     }, [])
 
+    useEffect(() => {
+        if(castIsShown) props.closeModal()
+    }, [castIsShown])
+
+
+
     const renderCast = (cast) => {
         return (
             <div className={"FilmModal__Crew"}>
-                {cast ? cast.map(actor => <FilmCrew person={actor}/>) : null}
+                {cast ? cast.map(actor => <FilmCrew key={actor.id} person={actor}/>) : null}
             </div>
         )
     }
