@@ -19,12 +19,12 @@ const UserProfile = ({person, isCurrent}) => {
         const age = chance.age({type: 'senior'});
         setPerson(Object.assign(new Person(), personState, { age }))
         
-    }
+    };
 
     const changeCity = () => {
         const city = chance.city();
         setPerson(Object.assign(new Person(), personState, { city }))
-    }
+    };
 
     return (
         <div className={`User ${isCurrent ? "User--current" : ''}`.trimEnd()}>
