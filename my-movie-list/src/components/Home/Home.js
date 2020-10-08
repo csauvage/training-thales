@@ -13,7 +13,7 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            searchValue: '',
+            searchValue: 'a',
             currentFilm: {},
             modalOpened: false,
             films: [],
