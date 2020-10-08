@@ -16,13 +16,19 @@ export default class Home extends React.Component {
             searchValue: '',
             currentFilm: {},
             modalOpened: false,
-            films: []
+            films: [],
+            favoritesFilms : []
         }
 
         this.searchFilms = this.searchFilms.bind(this)
     }
     
     async componentDidMount() {
+
+        const jsonFav = window.localStorage.getItem('@MyMovieList::Favorites');
+        if(jsonFav) {
+            this.setState({favoritesFilms: JSON.parse(jsonFav)}, _ => console.log(this.state.favoritesFilms));
+        }
 
         const nowPlaying = await Film.getNowPlaying();
         if(nowPlaying.results.length > 0) {
@@ -55,6 +61,23 @@ export default class Home extends React.Component {
         this.setState({modalOpened: !modalOpened, currentFilm: film})
     }
 
+    addToFavorites(film) {
+
+        const {favoritesFilms} = this.state;
+        favoritesFilms.push(film.id);
+        this.setState({favoritesFilms}, () => {
+            window.localStorage.setItem('@MyMovieList::Favorites', JSON.stringify(this.state.favoritesFilms))
+        });
+
+    }
+
+    removeFromFavorites(film) {
+        const {favoritesFilms} = this.state;
+        this.setState({favoritesFilms: favoritesFilms.filter(f => f !== film.id)}, () => {
+            window.localStorage.setItem('@MyMovieList::Favorites', JSON.stringify(this.state.favoritesFilms))
+        })
+    }
+
     
     
     render() {
@@ -73,21 +96,25 @@ export default class Home extends React.Component {
                 <div className="FilmList">
                     {this.state.films.map(f => 
                         <FilmCard key={f.id} 
-                                    film={f} 
+                                    film={f}
+                                    isFavorited={this.state.favoritesFilms.includes(f.id)} 
                                     onCardClick={f => this.handleClick(f)}/>)}
                 </div>
 
 
                 <Modal 
                     className="Modal" 
-                    overlayClassName="ModalOverlay" 
+                    overlayClassName="ModalOverlay"
                     isOpen={this.state.modalOpened}
-                    onScroll={e => e.stopPropagation()}
+                
                     >
                     
                     <FilmModal 
                         film={this.state.currentFilm}
                         closeModal={_ => this.setState({modalOpened: false})}
+                        addToFavorites={film => this.addToFavorites(film) }
+                        removeFromFavorites={film => this.removeFromFavorites(film)}
+                        isFavorited={this.state.favoritesFilms.includes(this.state.currentFilm.id)}
                     />
 
                 </Modal>
