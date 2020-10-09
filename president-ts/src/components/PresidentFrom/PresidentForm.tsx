@@ -27,11 +27,8 @@ const PresidentForm = (props: {onAddPresident: (president: President) => void}) 
             country: (country.current?.value as string) as Country
         }
 
-        console.log(president)
-
-
         props.onAddPresident(president);
-
+        
         // Je gère la situation 
     } 
 

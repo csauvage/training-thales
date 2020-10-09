@@ -51,7 +51,6 @@ const App: React.FC = () => {
                 })}
 
                 
-                <PresidentProfile status={"Sur le départ"} firstname={"Donald"} lastname={"Trump"} pays={Country.USA} age={trump.age}/>
             </>
         </div>
     )
