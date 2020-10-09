@@ -6,8 +6,10 @@ export default class PresidentProfile extends React.PureComponent<PresideProfile
 
     render() {
         return(
-            <div>
-                {this.props.firstname} {this.props.lastname}
+            <div className="PresidentProfile">
+                {this.props.firstname} {this.props.lastname} <br/>
+                <em>Status : {this.props.status}</em><br/>
+                {this.props.age} ans <br/>
                 <img src={require('../../assets/countries/' + this.props.pays + '.svg')}/>
             </div>
         )
