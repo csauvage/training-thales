@@ -9,7 +9,7 @@ import englishTranslation from './services/traductions/locales/en/translation.js
 
 const languages = {
     en: {
-        translation: englishTranslation
+        translation: englishTranslation,
     },
     de: {
         translation: germanTranslation

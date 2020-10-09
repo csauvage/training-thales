@@ -1,7 +1,12 @@
 {
-    "Bonjour" : "Bonjour",
-    "Bonsoir" : "Bonsoir",
-    "Bonne nuit" : "Bonne nuit",
+    "Bonjour" : "Bonjour {{customer.firstname}} vous avez la chambre {{customer.roomNumber}}",
+    "Bonsoir" : "Bonsoir {{customer.firstname}} vous avez la chambre {{customer.roomNumber}}",
+    "Bonne nuit" : "Bonne nuit {{customer.firstname}} vous avez la chambre {{customer.roomNumber}}",
     "Il est": "Il est",
-    "Changer la langue de l'application" : "Changer la langue de l'application"
+    "Changer la langue de l'application" : "Changer la langue de l'application",
+    "Pain" : "Demie-baguette",
+    "Pain_plural" : "Demie-baguettes",
+    "PainWithCount" : "{{count}} Demie-baguette",
+    "PainWithCount_plural" : "{{count}} Demie-baguettes"
+
 }

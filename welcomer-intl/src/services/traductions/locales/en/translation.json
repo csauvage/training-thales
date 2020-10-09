@@ -1,7 +1,11 @@
 {
-    "Bonjour" : "Hello",
-    "Bonsoir" : "Good Evening",
-    "Bonne nuit" : "Good Night",
+    "Bonjour" : "Hello {{customer.firstname}}, {{customer.roomNumber}} is your room",
+    "Bonsoir" : "Good Evening {{customer.firstname}}, {{customer.roomNumber}} is your room",
+    "Bonne nuit" : "Good Night {{customer.firstname}}, {{customer.roomNumber}} is your room",
     "il est": "It is",
-    "Changer la langue de l'application" : "Change app language"
+    "Changer la langue de l'application" : "Change app language",
+    "Pain" : "Half-baguette",
+    "Pain_plural" : "Half-baguette you hungry",
+    "PainWithCount" : "{{count}} Demie-baguette",
+    "PainWithCount_plural" : "{{count}} Demie-baguettes you hungry"
 }

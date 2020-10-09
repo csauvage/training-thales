@@ -1,7 +1,7 @@
 {
-    "Bonjour" : "Güten Tag",
-    "Bonsoir" : "Güten Abend",
-    "Bonne nuit" : "Güten Nacht",
+    "Bonjour" : "Güten Tag {{customer.firstname}}, sie ins Zimmer {{customer.roomNumber}} schlafen",
+    "Bonsoir" : "Güten Abend {{customer.firstname}}, sie ins Zimmer {{customer.roomNumber}} schlafen",
+    "Bonne nuit" : "Güten Nacht {{customer.firstname}}, sie ins Zimmer {{customer.roomNumber}} schlafen",
     "Il est": "Es ist",
     "Changer la langue de l'application" : "Bitte anwendung die Spache"
 }

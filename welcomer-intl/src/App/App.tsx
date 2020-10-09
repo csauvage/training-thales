@@ -11,6 +11,8 @@ const App = (props: {}) => {
     const [minute, setMinutes] = useState<number>(new Date().getMinutes())
     const [seconds, setSeconds] = useState<number>(new Date().getSeconds())
 
+    const [firstname, setFirstname] = useState("Clement")
+
     useEffect(() => {
         setInterval(() => {
             setHour(new Date().getHours())
@@ -20,11 +22,26 @@ const App = (props: {}) => {
         
     }, [])
 
+    const customer = {
+        firstname: "Clément",
+        roomNumber: 404
+    }
 
+    const baguetteCount = 5
 
     return (
         <div className="App">
-            <h1>{ t(TranslationKeys.Bonjour) }, {t(TranslationKeys.IlEst)} {hour}:{minute}:{seconds} </h1>
+            <h1>{ t(TranslationKeys.Bonjour, {customer}) }, {t(TranslationKeys.IlEst)} {hour}:{minute}:{seconds} </h1><br/>
+            <input value={firstname} onChange={e => setFirstname(e.target.value)}/>
+
+            <div className="App__Menu">
+                <h2> Menu du petit déjeuner</h2>
+
+                <ul>
+                    <li>🥖 {baguetteCount} {t(TranslationKeys.MenuBreadCount, {count: baguetteCount})}</li>
+                </ul>
+
+            </div>
         </div>
     )
 
