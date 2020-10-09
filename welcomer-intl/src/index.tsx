@@ -1,12 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
 import App from './App/App';
 import * as serviceWorker from './serviceWorker';
 import './reset.sass';
+import './i18n';
+import ChangeLang from './ChangeLang/ChangeLang';
 
-ReactDOM.render(
+render(
   <React.StrictMode>
+    <ChangeLang/>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

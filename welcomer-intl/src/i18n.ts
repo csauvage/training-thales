@@ -1,11 +1,37 @@
 import i18n from 'i18next';
 
 import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 
-import frenchTranslation from '../public/locales/fr/translation.json';
-import germanTranslation from '../public/locales/de/translation.json';
-import englishTranslation from '../public/locales/en/translation.json';
+import frenchTranslation from './services/traductions/locales/fr/translation.json'
+import germanTranslation from './services/traductions/locales/de/translation.json'
+import englishTranslation from './services/traductions/locales/en/translation.json'
 
-const i18n = null;
+const languages = {
+    en: {
+        translation: englishTranslation
+    },
+    de: {
+        translation: germanTranslation
+    },
+    fr: {
+        translation: frenchTranslation
+    }
+}
+
+i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        resources: languages,
+        lng: "en",
+        fallbackLng: "en",
+        keySeparator: false,
+        interpolation: {
+            escapeValue: false
+        }
+    });
+
+
 
 export default i18n;
