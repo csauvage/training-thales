@@ -9,5 +9,6 @@ export interface PresideProfileProps {
     pays?: Country,
     isCurrent?: boolean,
     onChangeCity?: Function,
-    onClick?: (e: Event) => void, 
+    onClick?: (e: Event) => void,
+    children?: React.ReactNode // React.Children | React.Child[] | JSX.Element
 }
